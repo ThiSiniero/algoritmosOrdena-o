@@ -14,7 +14,7 @@ h2{
     margin: 20px;
 }
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     background-color: #333;
