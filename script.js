@@ -27,6 +27,7 @@ function processFile() {
         const endTime = performance.now(); // Captura o tempo após a ordenação
         const timeTaken = endTime - startTime; // Calcula o tempo em milissegundos
         document.getElementById('executionTime').textContent = `Tempo de Execução: ${timeTaken.toFixed(4)} ms`;
+        document.getElementById('sortedResult').textContent = sortedNumbers.join('\n');
     };
     reader.readAsText(file);
 }
