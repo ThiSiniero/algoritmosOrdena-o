@@ -13,6 +13,18 @@ h1{
 h2{
     margin: 20px;
 }
+#sortedResult {
+    white-space: normal; /* Permite que o conteúdo quebre linha */
+    word-wrap: break-word; /* Garante que quebras ocorram em palavras muito longas */
+    overflow-wrap: break-word; /* Compatibilidade adicional */
+    max-width: 70%; /* Limita a largura ao tamanho da página */
+    padding: 10px; /* Dá algum espaço interno ao contêiner */
+    border: 1px solid #ccc; /* (Opcional) Para visualização, adicione uma borda */
+    margin: 10px auto; /* Centraliza o contêiner horizontalmente */
+    margin-bottom: 120px;
+
+    background-color:whitesmoke;
+}
 footer {
     position: fixed;
     bottom: 0;

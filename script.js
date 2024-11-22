@@ -27,7 +27,8 @@ function processFile() {
         const endTime = performance.now(); // Captura o tempo após a ordenação
         const timeTaken = endTime - startTime; // Calcula o tempo em milissegundos
         document.getElementById('executionTime').textContent = `Tempo de Execução: ${timeTaken.toFixed(4)} ms`;
-        document.getElementById('sortedResult').textContent = sortedNumbers.join('\n');
+        document.getElementById('sortedResult').textContent = sortedNumbers.map(num => num.toString().padStart(3, '0')).join(' - ');
+        document.getElementById('sortedResult').style.backgroundColor = "#f5f5f5";
     };
     reader.readAsText(file);
 }
