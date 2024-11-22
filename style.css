@@ -22,8 +22,6 @@ h2{
     border: 1px solid #ccc; /* (Opcional) Para visualização, adicione uma borda */
     margin: 10px auto; /* Centraliza o contêiner horizontalmente */
     margin-bottom: 120px;
-
-    background-color:whitesmoke;
 }
 footer {
     position: fixed;
