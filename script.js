@@ -1,6 +1,7 @@
 function processFile() {
     const fileInput = document.getElementById('fileInput');
     const file = fileInput.files[0];
+    let startTime, sortedNumbers, timeTaken;
 
     if (!file) {
         alert("Por favor, selecione um arquivo.");
@@ -21,12 +22,16 @@ function processFile() {
             alert("O arquivo não contém números válidos.");
             return;
         }
-
-        const startTime = performance.now(); // Captura o tempo antes da ordenação
-        const sortedNumbers = window[selectedAlgorithm](numbers);
-        const endTime = performance.now(); // Captura o tempo após a ordenação
-        const timeTaken = endTime - startTime; // Calcula o tempo em milissegundos
-        document.getElementById('executionTime').textContent = `Tempo de Execução: ${timeTaken.toFixed(4)} ms`;
+        try {
+          startTime = performance.now();
+          sortedNumbers = window[selectedAlgorithm](numbers);
+          endTime = performance.now();
+          timeTaken = endTime - startTime;
+        } catch (error) {
+          document.getElementById('sortedResult').textContent = "Erro de estouro de pilha, por favor tente com uma quantidade menor de numeros."
+        }
+        
+        document.getElementById('executionTime').textContent = `Tempo de Execução: ${timeTaken.toFixed(2)} ms`;
         document.getElementById('sortedResult').textContent = sortedNumbers.map(num => num.toString().padStart(3, '0')).join(' - ');
 
         document.getElementById('sortedResult').style.backgroundColor = "#f5f5f5";
@@ -170,11 +175,25 @@ function countingSortByExp(arr, exp) {
     }
 }
 
-function forceDownload(fileUrl) {
-    const a = document.createElement('a');
-    a.href = fileUrl;
-    a.download = fileUrl.split('/').pop(); // Define o nome do arquivo
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+function shellSort(arr) {
+  let n = arr.length;
+
+  // Inicializa o gap, começando em n/2 e reduzindo pela metade a cada iteração
+  for (let gap = Math.floor(n / 2); gap > 0; gap = Math.floor(gap / 2)) {
+      // Realiza o Insertion Sort para elementos separados pelo gap
+      for (let i = gap; i < n; i++) {
+          let temp = arr[i]; // Elemento atual sendo analisado
+          let j;
+
+          // Move os elementos do array que estão distantes pelo gap
+          for (j = i; j >= gap && arr[j - gap] > temp; j -= gap) {
+              arr[j] = arr[j - gap];
+          }
+
+          // Coloca o elemento temporário na posição correta
+          arr[j] = temp;
+      }
+  }
+
+  return arr; // Retorna o array ordenado
 }
