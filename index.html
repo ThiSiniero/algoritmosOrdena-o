@@ -1,43 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Ordenação de Números</title>
 </head>
+
 <body>
+    <header>
+        <img src="./img/pinpng.com-javascript-logo-png-1505926.png" alt="Logo" width="50px">
+        <div class="header-title">
+            <h1>Teste a velocidade de ordenação de cada algoritmo.</h1>
+        </div>
+        <div class="header-download">
+            <h4>Baixe arquivos txt de exemplo para utilizar neste teste</h4>
+            <nav>
+                <ul>
+                    <li><a href="arquivos/aleatorio_1k.zip" download="aleatorio_1k.zip">1k</a></li>
+                    <li><a href="arquivos/aleatorio_10k.zip" download="aleatorio_10k.zip">10k</a></li>
+                    <li><a href="arquivos/aleatorio_100k.zip" download="aleatorio_100k.zip">100k</a></li>
+                    <li><a href="arquivos/aleatorio_1m.zip" download="aleatorio_1m.zip">1M</a></li>
+                </ul>
+            </nav>           
+        </div>
+    </header>
+    
 
-<h1>Envie um arquivo .txt com números para ordenação</h2>
-<input type="file" id="fileInput" />
+    <section>
+        <h1>Envie um arquivo .txt com números para ordenação</h2>
+            <input type="file" id="fileInput" />
 
-<h1>Escolha um algoritmo de ordenação</h2>
+            <h1>Escolha um algoritmo de ordenação</h2>
 
-<select id="sortSelect">
-    <option value="bubbleSort">Bubble Sort</option>
-    <option value="selectionSort">Selection Sort</option>
-    <option value="insertionSort">Insertion Sort</option>
-    <option value="quickSort">Quick Sort</option>
-    <option value="mergeSort">Merge Sort</option>
-    <option value="heapSort">Heap Sort</option>
-    <option value="radixSort">Radix Sort</option>
-</select>
+                <select id="sortSelect">
+                    <option value="bubbleSort">Bubble Sort</option>
+                    <option value="selectionSort">Selection Sort</option>
+                    <option value="insertionSort">Insertion Sort</option>
+                    <option value="quickSort">Quick Sort</option>
+                    <option value="mergeSort">Merge Sort</option>
+                    <option value="heapSort">Heap Sort</option>
+                    <option value="radixSort">Radix Sort</option>
+                </select>
 
-<button onclick="processFile()">Ordenar Números</button>
+                <button onclick="processFile()">Ordenar Números</button>
 
-<h2>Tempo de Execução:</h2>
-<pre id="executionTime"></pre>
+                <h2>Tempo de Execução:</h2>
+                <pre id="executionTime"></pre>
 
-<h2>Resultado da Ordenação:</h2>
-<pre id="sortedResult"></pre>
+                <h2>Resultado da Ordenação:</h2>
+                <pre id="sortedResult"></pre>
+    </section>
 
-<footer>
-    <p>Página criada no intuito de mostrar a diferença de tempo de execução dos diversos algoritmos de ordenação.</p>
-    <p>Importante lembrar que este valor pode sofrer alterações devido a máquina e processamento utilizados.</p>
-    <p>feito por Thiago Siniero</p>
-</footer>
+    <footer>
+        <p>Página criada no intuito de mostrar a diferença de tempo de execução dos diversos algoritmos de
+            ordenação.</p>
+        <p>Importante lembrar que este valor pode sofrer alterações devido a máquina e processamento utilizados.
+        </p>
+        <p>feito por Thiago Siniero</p>
+    </footer>
 
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
+
 </html>

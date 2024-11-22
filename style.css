@@ -7,10 +7,57 @@ body{
     text-align: center;
     background-color: antiquewhite;
 }
-h1{
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.header-title {
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%); 
+    text-align: center;
+}
+
+.header-download {
+    margin-left: auto; 
+    text-align: right;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #007bffda;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+section h1{
     margin: 50px;
 }
-h2{
+section h2{
     margin: 20px;
 }
 #sortedResult {
@@ -30,4 +77,18 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0px;
+}
+
+@media (max-width: 768px) {
+    header img {
+        display: none;
+    }
+    .header-download {
+        display: none;
+    }
+    .header-title {
+        position: static;
+        transform: none;
+        text-align: center;
+    }
 }

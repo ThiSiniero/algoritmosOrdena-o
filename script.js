@@ -28,7 +28,7 @@ function processFile() {
         const timeTaken = endTime - startTime; // Calcula o tempo em milissegundos
         document.getElementById('executionTime').textContent = `Tempo de Execução: ${timeTaken.toFixed(4)} ms`;
         document.getElementById('sortedResult').textContent = sortedNumbers.map(num => num.toString().padStart(3, '0')).join(' - ');
-        
+
         document.getElementById('sortedResult').style.backgroundColor = "#f5f5f5";
         document.getElementById('sortedResult').style.border = "1px solid #ccc"
     };
@@ -169,4 +169,12 @@ function countingSortByExp(arr, exp) {
       arr[i] = output[i];
     }
 }
-  
+
+function forceDownload(fileUrl) {
+    const a = document.createElement('a');
+    a.href = fileUrl;
+    a.download = fileUrl.split('/').pop(); // Define o nome do arquivo
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
